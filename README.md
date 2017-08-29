@@ -36,5 +36,5 @@ runApp("/home/file/path/toDownloaded/gz/app")
 ```
 or launch __R__ in the same folder/directory and simply use the name of the downloaded file:
 ```R
-runApp("RemyNicolle-HistoGenomics.tar.gz")
+runApp("HistoGenomics.tar.gz")
 ```
