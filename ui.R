@@ -15,7 +15,7 @@ title = 'Histogenomics',
 sliderInput("size", "Image size (%)", min = 10, max = 150, value = 80),
 
 radioButtons("which","Show zoom on selected portion of the slide or full slide:", choiceValues=c("selected","full"),
-choiceNames=c("zoom on selection","full slide"),
+choiceNames=c("10x zoom on selection","full slide"),
 selected="full"),
 
 selectInput("comp","Select component:",
