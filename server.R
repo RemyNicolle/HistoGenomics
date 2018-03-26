@@ -90,8 +90,7 @@ shinyServer(function(input, output, session) {
      list(
         size=input$size,
         imgpath=paste0(imgdir,samp[ORD,"histologyID"],imgextension)[i],
-        labels=paste(LABELS[ORD],selcomp,":",signif(samp[ORD,selcomp],3),
-            " ( rank:",i,"; percentile:",signif(100*((N:1)/N),2),"% ;", rangstr ,")")[i]
+        labels=paste(LABELS[ORD],"percentile on component",selcomp,":",signif(100*((N:1)/N),2),"% ( value on component:",signif(samp[ORD,selcomp],3)," ; ", rangstr ,")")[i]
         )
  })
 
