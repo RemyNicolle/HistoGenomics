@@ -48,6 +48,7 @@ h3("Sample selection"),
     # fluidRow(
     h3("Sample slide"),
 	textOutput(paste0('lab')),
+	plotOutput("distrib",height="200px"),
 	imageOutput(paste0('plot'),height="auto",width="auto")
 
 	# )
