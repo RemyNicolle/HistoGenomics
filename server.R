@@ -84,8 +84,8 @@ shinyServer(function(input, output, session) {
     samp[,selcomp]
     ORD=order(samp[,selcomp],decreasing=T,na.last=NA)
 
-    plot(density(samp[,selcomp],na.rm=T),bty="l",main=paste0("Distribution of ",selcomp),sub=NULL,xlab=paste0(selcomp," value and indication of the selected sample")         )
-    abline(v=samp[ORD[i],selcomp],col="red")  
+    plot(density(samp[,selcomp],na.rm=T),bty="l",main=paste0("Distribution of ",selcomp),sub=NULL,xlab=paste0(selcomp," value distribubtion of all samples\nRed bar indicates the selected sample")         )
+    abline(v=samp[ORD[i],selcomp],col="red",lwd=4)  
   })
 
 
@@ -105,7 +105,8 @@ shinyServer(function(input, output, session) {
    list(
     size=input$size,
     imgpath=paste0(imgdir,samp[ORD,"histologyID"],imgextension)[i],
-    labels=paste(LABELS[ORD],"percentile on component",selcomp,":",signif(100*((getMaxRank():1)/getMaxRank()),2),"% ( value on component:",signif(samp[ORD,selcomp],3)," ; ", rangstr ,")")[i]
+    # labels=paste(LABELS[ORD],"percentile on component",selcomp,":",signif(100*((getMaxRank():1)/getMaxRank()),2),"% ( value on component:",signif(samp[ORD,selcomp],3)," ; ", rangstr ,")")[i]
+     labels=paste(LABELS[ORD],"component",selcomp,", rank :",1:getMaxRank()," (percentile: ",signif(100*((getMaxRank():1)/getMaxRank()),2),"% ; value on component:",signif(samp[ORD,selcomp],3)," ; ", rangstr ,")")[i]
     )
  })
 
